@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.button {
+    margin-left: 2vh;
+    font-size: 3vh;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+}
+
+.button i {
+    margin-top: 2vh;
+    margin-left: 2px;
+    padding: 1px;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    background-image: linear-gradient(-330deg, #EE82EE, #FFDAB9);
+
+}
+
+.overlay a {
+    text-decoration: none;
+    font-size: 4vh;
+    margin: 15px 15px;
+    color: white;
+    padding: 3px;
+
+}
+
+.overlay a:hover {
+    color: orange;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    transition: ease-in-out 0.5s;
+    transform: scale(1.5);
+}
+
+.overlay .close-btn {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    font-size: 4vh;
+    cursor: pointer;
+    color: white;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+#nav-toggle:checked+.overlay {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease-in-out;
+}
+
+#nav-toggle:checked+.overlay a {
+    animation: hero 0.2s ease-in-out alternate 4;
+
+}
+
+@keyframes hero {
+    from {
+        transform: rotateY(-120deg);
+    }
+
+    to {
+        transform: scale(1.7);
+        transition: all 0.4s;
+    }
+
+}
